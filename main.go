@@ -600,7 +600,7 @@ func main() {
 func withCORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Разрешаем фронту с другого origin
-		w.Header().Set("Access-Control-Allow-Origin", "https://uraniumcore.github.io/coa-prep/index.html")
+		w.Header().Set("Access-Control-Allow-Origin", "https://uraniumcore.github.io/fabulousProject/")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
 
