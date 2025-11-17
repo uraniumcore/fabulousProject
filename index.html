@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COA Prep</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .card {
+            width: min(900px, 100%);
+            max-height: 90vh;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            padding: 24px 32px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .initialize,
+        .test-window,
+        .result-window {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+        }
+
+        .initialize.active,
+        .test-window.active,
+        .result-window.active {
+            display: flex;
+        }
+
+        .initialize {
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .test-window {
+            overflow-y: auto;
+        }
+
+        .result-window {
+            overflow-y: auto;
+        }
+
+        .start-test,
+        .primary-btn,
+        .secondary-btn {
+            height: 2.5rem;
+            padding: 0 1.25rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .primary-btn,
+        .start-test {
+            background: linear-gradient(135deg, #4e8cff, #3a6be0);
+            color: white;
+        }
+
+        .secondary-btn {
+            background-color: #e4e6eb;
+            color: #111827;
+        }
+
+        .start-test {
+            margin-top: 8px;
+        }
+
+        .field-label {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            color: #374151;
+        }
+
+        .text-input {
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            width: 240px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .text-input:focus {
+            border-color: #4e8cff;
+            box-shadow: 0 0 0 2px rgba(78, 140, 255, 0.25);
+        }
+
+        .question-block {
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.25rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .question-block h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1rem;
+            color: #111827;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 0.35rem 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 0.35rem;
+            transition: background-color 0.15s ease;
+            font-size: 0.95rem;
+        }
+
+        .option-label:hover {
+            background-color: #e5e7eb;
+        }
+
+        .option-label input {
+            margin-right: 0.5rem;
+        }
+
+        #loading {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #374151;
+            backdrop-filter: blur(2px);
+        }
+
+        .loading-hidden {
+            display: none !important;
+        }
+
+        .result-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 12px;
+        }
+
+        .result-main {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .score-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: conic-gradient(#4ade80 var(--percent), #e5e7eb 0deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .score-circle-inner {
+            position: absolute;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .result-details {
+            font-size: 0.95rem;
+        }
+
+        .result-details h2 {
+            margin: 0 0 4px;
+            font-size: 1.2rem;
+            color: #111827;
+        }
+
+        .result-details p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        .review-block {
+            margin-top: 1rem;
+        }
+
+        .review-item {
+            margin-bottom: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .review-item h4 {
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+            color: #111827;
+        }
+
+        .review-option {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .correct {
+            color: #15803d;
+            font-weight: 600;
+        }
+
+        .incorrect {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        .muted {
+            color: #6b7280;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tag-pass {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .tag-fail {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 16px;
+                border-radius: 0;
+                max-height: 100vh;
+            }
+
+            .result-summary {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const initWindow   = document.getElementById("initialize");
+            const testWindow   = document.getElementById("test-window");
+            const resultWindow = document.getElementById("result-window");
+            const startTestBtn = document.getElementById("start-test");
+            const loading      = document.getElementById("loading");
+            const questionCountSelect = document.getElementById("question-count");
+
+            let questions = [];
+            let answers   = {}; // { questionId: choiceIndex }
+            let currentTestId = null;
+            let currentUser   = null;
+
+            const apiUrl = "http://localhost:8080";
+
+            function showView(view) {
+                initWindow.classList.remove("active");
+                testWindow.classList.remove("active");
+                resultWindow.classList.remove("active");
+
+                if (view === "init") {
+                    initWindow.classList.add("active");
+                } else if (view === "test") {
+                    testWindow.classList.add("active");
+                } else if (view === "result") {
+                    resultWindow.classList.add("active");
+                }
+            }
+
+            function setLoading(isLoading) {
+                if (isLoading) {
+                    loading.classList.remove("loading-hidden");
+                } else {
+                    loading.classList.add("loading-hidden");
+                }
+            }
+
+            // Фишер–Йетс shuffle (делает новый массив, чтобы не мутировать оригинал)
+            function shuffleArray(arr) {
+                const a = arr.slice();
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            async function finishExam(questions, answers) {
+                const answersArray = questions.map(q => ({
+                    question_id: q.id,
+                    choice: answers[q.id] ?? -1
+                }));
+
+                setLoading(true);
+                try {
+                    const response = await fetch(`${apiUrl}/submit`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            test_id: currentTestId,
+                            user: currentUser,
+                            answers: answersArray
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Server error: " + response.status);
+                    }
+
+                    const result = await response.json();
+                    renderResultPage(result);
+                    showView("result");
+                } catch (err) {
+                    console.error(err);
+                    alert("Ошибка при отправке результатов: " + err.message);
+                } finally {
+                    setLoading(false);
+                }
+            }
+
+            // КНОПКА START TEST
+            startTestBtn.addEventListener("click", async function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById("user-name").value.trim();
+                if (!name) {
+                    alert("Введите имя перед началом теста");
+                    return;
+                }
+                currentUser = name;
+
+                const selected = questionCountSelect.value; // "5" | "10" | "20" | "all"
+
+                showView("test");
+                testWindow.innerHTML = "";
+                setLoading(true);
+
+                try {
+                    const response = await fetch(`${apiUrl}/start`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ user: name })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Server error: " + response.status);
+                    }
+
+                    const data = await response.json();
+                    currentTestId = data.test_id;
+                    let allQuestions = data.test || [];
+
+                    if (!Array.isArray(allQuestions) || allQuestions.length === 0) {
+                        throw new Error("Пустой список вопросов");
+                    }
+
+                    // перемешиваем все вопросы
+                    allQuestions = shuffleArray(allQuestions);
+
+                    // считаем, сколько брать
+                    let count;
+                    if (selected === "all") {
+                        count = allQuestions.length;
+                    } else {
+                        const n = parseInt(selected, 10);
+                        count = Math.min(n, allQuestions.length);
+                    }
+
+                    // берём первые count вопросов из перемешанного списка
+                    questions = allQuestions.slice(0, count);
+
+                    // сбрасываем ответы
+                    answers = {};
+
+                    buildExamPage(questions);
+                    showView("test");
+                } catch (err) {
+                    console.error(err);
+                    alert("Не удалось загрузить тест: " + err.message);
+                    showView("init");
+                } finally {
+                    setLoading(false);
+                }
+            });
+
+            // Рендер страницы теста
+            function buildExamPage(questions) {
+                testWindow.innerHTML = "";
+
+                const header = document.createElement("div");
+                header.style.display = "flex";
+                header.style.justifyContent = "space-between";
+                header.style.alignItems = "center";
+                header.style.marginBottom = "1rem";
+
+                const title = document.createElement("h2");
+                title.textContent = "Тест по COA";
+
+                const userSpan = document.createElement("span");
+                userSpan.className = "muted";
+                userSpan.textContent = `Участник: ${currentUser}`;
+
+                header.appendChild(title);
+                header.appendChild(userSpan);
+                testWindow.appendChild(header);
+
+                const form = document.createElement("form");
+                form.id = "exam-form";
+
+                questions.forEach((q, index) => {
+                    const qWrapper = document.createElement("div");
+                    qWrapper.className = "question-block";
+
+                    const qTitle = document.createElement("h3");
+                    qTitle.textContent = `${index + 1}. ${q.question}`;
+                    qWrapper.appendChild(qTitle);
+
+                    q.options.forEach((opt, optIndex) => {
+                        const label = document.createElement("label");
+                        label.className = "option-label";
+
+                        const input = document.createElement("input");
+                        input.type = "radio";
+                        input.name = `q_${q.id}`;
+                        input.value = optIndex;
+
+                        input.addEventListener("change", () => {
+                            answers[q.id] = optIndex;
+                        });
+
+                        label.appendChild(input);
+                        label.appendChild(document.createTextNode(opt));
+
+                        qWrapper.appendChild(label);
+                    });
+
+                    form.appendChild(qWrapper);
+                });
+
+                const footer = document.createElement("div");
+                footer.style.display = "flex";
+                footer.style.justifyContent = "flex-end";
+                footer.style.marginTop = "0.5rem";
+
+                const submitBtn = document.createElement("button");
+                submitBtn.type = "button";
+                submitBtn.className = "primary-btn";
+                submitBtn.textContent = "Завершить тест";
+
+                submitBtn.addEventListener("click", () => {
+                    const unanswered = questions.filter(q => answers[q.id] === undefined).length;
+                    if (unanswered > 0 && !confirm(`Вы не ответили на ${unanswered} вопросов. Всё равно завершить?`)) {
+                        return;
+                    }
+                    finishExam(questions, answers);
+                });
+
+                footer.appendChild(submitBtn);
+                form.appendChild(footer);
+
+                testWindow.appendChild(form);
+            }
+
+            // Рендер страницы результата + ревью
+            function renderResultPage(result) {
+                resultWindow.innerHTML = "";
+
+                const score = result.score;
+                const total = questionCountSelect.value;
+                const percent = total > 0 ? Math.round((score / total) * 100) : 0;
+                const passed = percent >= 60;
+
+                const summary = document.createElement("div");
+                summary.className = "result-summary";
+
+                const main = document.createElement("div");
+                main.className = "result-main";
+
+                const circle = document.createElement("div");
+                circle.className = "score-circle";
+                circle.style.setProperty("--percent", `${percent * 3.6}deg`);
+
+                const circleInner = document.createElement("div");
+                circleInner.className = "score-circle-inner";
+                circleInner.textContent = `${percent}%`;
+                circle.appendChild(circleInner);
+
+                const details = document.createElement("div");
+                details.className = "result-details";
+
+                const title = document.createElement("h2");
+                title.textContent = passed ? "Отлично, так держать!" : "Есть, над чем поработать";
+
+                const subtitle = document.createElement("p");
+                subtitle.textContent = `${score} из ${total} правильных ответов`;
+
+                const tag = document.createElement("span");
+                tag.className = "tag " + (passed ? "tag-pass" : "tag-fail");
+                tag.textContent = passed ? "Сдано" : "Не сдано";
+
+                details.appendChild(title);
+                details.appendChild(subtitle);
+                details.appendChild(tag);
+
+                main.appendChild(circle);
+                main.appendChild(details);
+
+                const actions = document.createElement("div");
+                actions.className = "result-actions";
+
+                const retryBtn = document.createElement("button");
+                retryBtn.className = "secondary-btn";
+                retryBtn.type = "button";
+                retryBtn.textContent = "Пройти ещё раз";
+                retryBtn.addEventListener("click", () => {
+                    showView("init");
+                });
+
+                const reviewBtn = document.createElement("button");
+                reviewBtn.className = "primary-btn";
+                reviewBtn.type = "button";
+                reviewBtn.textContent = "Показать разбор";
+                reviewBtn.addEventListener("click", () => {
+                    const review = document.getElementById("review-block");
+                    if (review) {
+                        review.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+
+                actions.appendChild(retryBtn);
+                actions.appendChild(reviewBtn);
+
+                summary.appendChild(main);
+                summary.appendChild(actions);
+
+                resultWindow.appendChild(summary);
+
+                const reviewBlock = document.createElement("div");
+                reviewBlock.className = "review-block";
+                reviewBlock.id = "review-block";
+
+                const reviewTitle = document.createElement("h3");
+                reviewTitle.textContent = "Разбор вопросов";
+                reviewBlock.appendChild(reviewTitle);
+
+                (result.results || []).forEach((item, index) => {
+                    const ri = document.createElement("div");
+                    ri.className = "review-item";
+
+                    const qTitle = document.createElement("h4");
+                    qTitle.textContent = `${index + 1}. ${item.question}`;
+                    ri.appendChild(qTitle);
+
+                    item.options.forEach((opt, optIndex) => {
+                        const row = document.createElement("div");
+                        row.className = "review-option";
+
+                        const isCorrect = optIndex === item.correct_choice;
+                        const isChosen  = optIndex === item.user_choice;
+
+                        let text = opt;
+
+                        if (isCorrect && isChosen) {
+                            text += " — ваша отметка, правильно ✔";
+                            row.classList.add("correct");
+                        } else if (isCorrect && !isChosen) {
+                            text += " — правильный ответ";
+                            row.classList.add("correct");
+                        } else if (!isCorrect && isChosen) {
+                            text += " — ваша отметка, неверно ✖";
+                            row.classList.add("incorrect");
+                        } else {
+                            row.classList.add("muted");
+                        }
+
+                        row.textContent = text;
+                        ri.appendChild(row);
+                    });
+
+                    if (item.user_choice === -1 || item.user_choice === null || item.user_choice === undefined) {
+                        const note = document.createElement("div");
+                        note.className = "muted";
+                        note.textContent = "Вы не выбрали ответ на этот вопрос.";
+                        ri.appendChild(note);
+                    }
+
+                    reviewBlock.appendChild(ri);
+                });
+
+                resultWindow.appendChild(reviewBlock);
+            }
+
+            showView("init");
+            setLoading(false);
+        });
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="card">
+        <div id="initialize" class="initialize active">
+            <div>
+                <div class="field-label">Your name</div>
+                <input id="user-name" name="name" type="text" class="text-input" placeholder="Введите имя">
+            </div>
+
+            <div style="margin-top: 12px;">
+                <div class="field-label">Сколько вопросов использовать</div>
+                <select id="question-count" class="text-input">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="all">Все</option>
+                </select>
+            </div>
+
+            <button id="start-test" class="start-test primary-btn" style="margin-top: 16px;">
+                START TEST
+            </button>
+        </div>
+
+        <div id="test-window" class="test-window">
+            <!-- сюда JS дорисует тест -->
+        </div>
+
+        <div id="result-window" class="result-window">
+            <!-- сюда JS дорисует результаты -->
+        </div>
+    </div>
+
+    <div id="loading" class="loading-hidden">
+        Loading...
+    </div>
+</div>
+</body>
+
+</html>
