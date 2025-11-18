@@ -569,7 +569,992 @@ var baseQuestions = []Question{
 		},
 		Answer: 1, // Incorrect printer driver
 	},
-}
+	{
+	    ID:       41,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to allow secure access to the main doors of the company by swiping an ID card. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "joystick or gamepad",
+	        "projector",
+	        "AR headset",
+	        "magstripe reader",
+	    },
+	    Answer: 3, // magstripe reader
+	},
+	{
+	    ID:       42,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to display a promotional presentation to a large audience at a conference. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "joystick or gamepad",
+	        "magstripe reader",
+	        "projector",
+	        "AR headset",
+	    },
+	    Answer: 2, // projector
+	},
+	{
+	    ID:       43,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to help a person with accessibility issues input instructions into a laptop by using a pen. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "stylus",
+	        "biometric scanner",
+	        "keyboard",
+	        "NFC device",
+	    },
+	    Answer: 0, // stylus
+	},
+	{
+	    ID:       44,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to allow secure access to the main doors of the company by swiping an ID card. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "magstripe reader",
+	        "biometric scanner",
+	        "keyboard",
+	        "NFC device",
+	    },
+	    Answer: 0, // magstripe reader
+	},
+	{
+	    ID:       45,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to provide secure access to the central server room using a retinal scan. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "biometric scanner",
+	        "keyboard",
+	        "NFC device",
+	        "flatbed scanner",
+	    },
+	    Answer: 0, // biometric scanner
+	},
+	{
+	    ID:       46,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to train pilots how to land and take off in a computer simulation environment. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "projector",
+	        "joystick or gamepad",
+	        "magstripe reader",
+	        "AR headset",
+	    },
+	    Answer: 1, // joystick or gamepad
+	},
+	{
+	    ID:       47,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to manually input text for a new networking textbook that the customer is writing. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "biometric scanner",
+	        "NFC device",
+	        "flatbed scanner",
+	        "keyboard",
+	    },
+	    Answer: 3, // keyboard
+	},
+	{
+	    ID:       48,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to allow users to tap and pay for their purchases. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "NFC device",
+	        "joystick or gamepad",
+	        "projector",
+	        "magstripe reader",
+	    },
+	    Answer: 0, // NFC device
+	},
+	{
+	    ID:       49,
+	    Question: "A customer comes into a computer parts and service store. The customer is looking for a device to help when repairing an airplane and that will allow the customer to see and interact with the repair manual at the same time. What device should the store owner recommend to accomplish the required task?",
+	    Options: []string{
+	        "biometric scanner",
+	        "keyboard",
+	        "AR headset",
+	        "NFC device",
+	    },
+	    Answer: 2, // AR headset
+	},
+	{
+	    ID:       50,
+	    Question: "A customer has a computer for a home business, but wants to have another computer as a web server. What would be the best solution for the customer to share the monitor, mouse, and keyboard between the two computers?",
+	    Options: []string{
+	        "access point",
+	        "KVM switch",
+	        "multipurpose device",
+	        "USB hub",
+	    },
+	    Answer: 1, // KVM switch
+	},
+	{
+	    ID:       51,
+	    Question: "A customer has a computer for a home business, but wants to have another computer as a web server. What would be the best solution for the customer to share the monitor, mouse, and keyboard between the two computers?",
+	    Options: []string{
+	        "KVM switch",
+	        "access point",
+	        "multipurpose device",
+	        "network switch",
+	        "USB hub",
+	    },
+	    Answer: 0, // KVM switch
+	},
+	{
+	    ID:       52,
+	    Question: "A device that blocks traffic that meets certain criteria is know as a ________.",
+	    Options: []string{
+	        "Switch",
+	        "Firewall",
+	        "Router",
+	        "Hub",
+	    },
+	    Answer: 1, // Firewall
+	},
+	{
+	    ID:       53,
+	    Question: "A network specialist has been hired to install a network in a company that assembles airplane engines. Because of the nature of the business, the area is highly affected by electromagnetic interference. Which type of network media should be recommended so that the data communication will not be affected by EMI?",
+	    Options: []string{
+	        "UTP",
+	        "STP",
+	        "fiber optic",
+	        "coaxial",
+	    },
+	    Answer: 2, // fiber optic
+	},
+	{
+	    ID:       54,
+	    Question: "A proxy is something that _______________________." ,
+	    Options: []string{
+	        "sends data across a single network segment.",
+	        "communicates on behalf of something else.",
+	        "encrypts traffic sent across the Internet.",
+	        "allows for many devices to speak to one other device.",
+	    },
+	    Answer: 1, // communicates on behalf of something else
+	},
+	{
+	    ID:       55,
+	    Question: "A student is looking to add memory in order to speed up a tower computer. Which type of memory module should the student be looking for?",
+	    Options: []string{
+	        "DIMM",
+	        "DIP",
+	        "SIMM",
+	        "SODIMM",
+	    },
+	    Answer: 0, // DIMM
+	},
+	{
+	    ID:       56,
+	    Question: "A technician is building a thick client workstation that would be used to run a database and wants to ensure the best protection against errors. What type of memory would be best suited for this?",
+	    Options: []string{
+	        "RDRAM",
+	        "ECC",
+	        "DDR3",
+	        "DDR2",
+	    },
+	    Answer: 1, // ECC
+	},
+	{
+	    ID:       57,
+	    Question: "A technician is installing a new high-end video adapter card into an expansion slot on a motherboard. What may be needed to operate this video adapter card?",
+	    Options: []string{
+	        "24-pin ATX power connector",
+	        "PCI expansion slot",
+	        "Two 8-pin power connectors",
+	        "PCIe x 8 expansion slot",
+	    },
+	    Answer: 2, // Two 8-pin power connectors
+	},
+	{
+	    ID:       58,
+	    Question: "A technician is performing hardware maintenance of PCs at a construction site. What task should the technician perform as part of a preventive maintenance plan?",
+	    Options: []string{
+	        "Back up the data, reformat the hard drive, and reinstall the data.",
+	        "Remove dust from intake fans.",
+	        "Perform an audit of all software that is installed.",
+	        "Develop and install forensic tracking software.",
+	    },
+	    Answer: 1, // Remove dust from intake fans
+	},
+	{
+	    ID:       59,
+	    Question: "A technician is searching through a storage locker and finds a firewall. What is the purpose of this device?",
+	    Options: []string{
+	        "It is placed between two or more networks and protects data and equipment from unauthorized access.",
+	        "It is a device that uses existing electrical wiring to connect devices and sends data using specific frequencies.",
+	        "It is a device that can be inserted in the middle of a cable run to add power.",
+	        "It connects a home or business network to a company that provides internet connectivity as well as television signals.",
+	    },
+	    Answer: 0, // Network protection between networks
+	},
+	{
+	    ID:       60,
+	    Question: "A technician looks at a motherboard and sees a 24-pin connector. What component would connect to the motherboard through the use of this 24-pin connector?",
+	    Options: []string{
+	        "power supply",
+	        "video card",
+	        "PATA optical drive",
+	        "SATA drive",
+	        "floppy drive",
+	    },
+	    Answer: 0, // power supply
+	},
+	{
+	    ID:       61,
+	    Question: "A user playing a game on a gaming PC with a standard EIDE 5400 RPM hard drive finds the performance unsatisfactory. Which hard drive upgrade would improve performance while providing more reliability and more energy efficiency?",
+	    Options: []string{
+	        "a 7200 RPM SATA hard drive",
+	        "a 7200 RPM EIDE hard drive",
+	        "a 10,000 RPM SATA hard drive",
+	        "an SSD",
+	    },
+	    Answer: 3, // SSD
+	},
+	{
+	    ID:       62,
+	    Question: "A web designer installed the latest video editing software and now notices that when the application loads, it responds slowly. Also the hard disk LED is constantly flashing when the application is in use. What is a solution to solve the performance problem?",
+	    Options: []string{
+	        "upgrading to a faster CPU",
+	        "replacing the video card with a model that has a DVI output",
+	        "adding more RAM",
+	        "replacing the hard disk with a faster model",
+	    },
+	    Answer: 2, // adding more RAM
+	},
+	{
+	    ID:       63,
+	    Question: "Adapter cards slide into ____.",
+	    Options: []string{
+	        "PCIe slots",
+	        "memory slots",
+	        "processor slots",
+	        "power slots",
+	    },
+	    Answer: 0, // PCIe slots
+	},
+	{
+	    ID:       64,
+	    Question: "All programs that are currently running are located in the _____.",
+	    Options: []string{
+	        "RAM",
+	        "Hard Disk",
+	        "Processor",
+	        "Motherboard",
+	    },
+	    Answer: 0, // RAM
+	},
+	{
+	    ID:       65,
+	    Question: "An employee reports that each time a workstation is started it locks up after about 5 minutes of use. What is the most likely cause of the problem?",
+	    Options: []string{
+	        "The RAM is malfunctioning.",
+	        "The CPU is overheating.",
+	        "The power supply fails to provide adequate voltage and current.",
+	        "The hard disk is failing.",
+	    },
+	    Answer: 1, // CPU overheating
+	},
+	{
+	    ID:       66,
+	    Question: "An example of something that operates at the application layer is:",
+	    Options: []string{
+	        "TCP",
+	        "A web browser",
+	        "UDP",
+	        "A router",
+	    },
+	    Answer: 1, // A web browser
+	},
+	{
+	    ID:       67,
+	    Question: "How are the internal components of a computer protected against ESD?",
+	    Options: []string{
+	        "by using computer cases made out of plastic or aluminum",
+	        "by unplugging the computer after use",
+	        "by using multiple fans to move warm air through the case",
+	        "by grounding the internal components via attachment to the case.",
+	    },
+	    Answer: 3, // grounding via case
+	},
+	{
+	    ID:       68,
+	    Question: "How is a power supply commonly attached to a tower case?",
+	    Options: []string{
+	        "standoffs",
+	        "screws",
+	        "restraining strap",
+	        "retention bar",
+	    },
+	    Answer: 1, // screws
+	},
+	{
+	    ID:       69,
+	    Question: "If you don't want to use static IP addresses, but want to dynamically assign IP addresses to computers instead, what network protocol can you use?",
+	    Options: []string{
+	        "TFTP",
+	        "Kerberos",
+	        "NTP",
+	        "DHCP",
+	    },
+	    Answer: 3, // DHCP
+	},
+	{
+	    ID:       70,
+	    Question: "VPNs are known as a _____ protocol.",
+	    Options: []string{
+	        "connectionless",
+	        "data link layer",
+	        "network layer",
+	        "tunneling",
+	    },
+	    Answer: 3, // tunneling
+	},
+	{
+	    ID:       71,
+	    Question: "What component is most suspect if a burning electronics smell is evident?",
+	    Options: []string{
+	        "RAM module",
+	        "CPU",
+	        "hard drive",
+	        "power supply",
+	    },
+	    Answer: 3, // power supply
+	},
+	{
+	    ID:       72,
+	    Question: "What data is stored in the CMOS memory chip?",
+	    Options: []string{
+	        "user login information",
+	        "device drivers",
+	        "Windows configuration settings",
+	        "BIOS settings",
+	    },
+	    Answer: 3, // BIOS settings
+	},
+	{
+	    ID:       73,
+	    Question: "What does LAN stand for?",
+	    Options: []string{
+	        "Large area network",
+	        "Little area network",
+	        "Local area network",
+	        "Locally available network",
+	    },
+	    Answer: 2, // Local area network
+	},
+	{
+	    ID:       74,
+	    Question: "What does the “A” in P-A-S-S remind a person to do while using a fire extinguisher?",
+	    Options: []string{
+	        "Adjust the pressure.",
+	        "Aim the fire extinguisher at the flames.",
+	        "Aim the fire extinguisher at the base of the fire.",
+	        "Activate the fire extinguisher.",
+	    },
+	    Answer: 2, // Aim at base
+	},
+	{
+	    ID:       75,
+	    Question: "What does WAN stand for?",
+	    Options: []string{
+	        "Wireless Local Area Network",
+	        "Wireless Area Network",
+	        "Wired Area Network",
+	        "Wide Area Network",
+	    },
+	    Answer: 3, // Wide Area Network
+	},
+	{
+	    ID:       76,
+	    Question: "What electrical unit refers to the number of electrons moving through a circuit per second?",
+	    Options: []string{
+	        "resistance",
+	        "current",
+	        "voltage",
+	        "power",
+	    },
+	    Answer: 1, // current
+	},
+	{
+	    ID:       77,
+	    Question: "What is a characteristic of a WAN?",
+	    Options: []string{
+	        "It connects multiple networks that are geographically separated.",
+	        "It spans across a campus or city to enable sharing of regional resources.",
+	        "It is typically owned and managed by a single home or business.",
+	        "It requires a wireless access point to connect users to the network.",
+	    },
+	    Answer: 0, // geographically separated networks
+	},
+	{
+	    ID:       78,
+	    Question: "What is a primary benefit of preventive maintenance on a PC?",
+	    Options: []string{
+	        "It simplifies PC use for the end user.",
+	        "It extends the life of the components.",
+	        "It assists the user in software development.",
+	        "It enhances the troubleshooting processes.",
+	    },
+	    Answer: 1, // extends life
+	},
+	{
+	    ID:       79,
+	    Question: "What is an active cooling solution for a PC?",
+	    Options: []string{
+	        "Reduce the speed of the CPU.",
+	        "Add a heatsink to the CPU.",
+	        "Add an additional case fan.",
+	        "Use a painted computer case.",
+	    },
+	    Answer: 2, // additional case fan
+	},
+	{
+	    ID:       80,
+	    Question: "What is an active cooling solution for a PC?",
+	    Options: []string{
+	        "Add a heatsink to the CPU.",
+	        "Reduce the speed of the CPU.",
+	        "Use a painted computer case.",
+	        "Add an additional case fan.",
+	    },
+	    Answer: 3, // additional case fan
+	},
+	{
+	    ID:       81,
+	    Question: "What is one purpose of adjusting the clock speed within the BIOS configuration settings?",
+	    Options: []string{
+	        "to disable devices that are not needed or used by the computer",
+	        "to change the order of the bootable partitions",
+	        "to allow a computer to run multiple operating systems in files or partitions",
+	        "to allow the computer to run slower and cooler",
+	    },
+	    Answer: 3, // run slower and cooler
+	},
+	{
+	    ID:       82,
+	    Question: "What is used to prevent the motherboard from touching metal portions of the computer case?",
+	    Options: []string{
+	        "an I/O shield",
+	        "standoffs",
+	        "thermal compound",
+	        "ZIF sockets",
+	    },
+	    Answer: 1, // standoffs
+	},
+	{
+	    ID:       83,
+	    Question: "What transport layer protocol does DNS normally use?",
+	    Options: []string{
+	        "IP",
+	        "TCP",
+	        "ICMP",
+	        "UDP",
+	    },
+	    Answer: 3, // UDP
+	},
+	{
+	    ID:       84,
+	    Question: "What's a router?",
+	    Options: []string{
+	        "more advanced version of a switch",
+	        "A network device used specially for fiber cables",
+	        "A device that knows how to forward data between independent networks",
+	        "A physical layer device that prevents crosstalk",
+	    },
+	    Answer: 2, // forwards between networks
+	},
+	{
+	    ID:       85,
+	    Question: "What's the difference between a client and a server?",
+	    Options: []string{
+	        "Clients operate on the data link layer, and servers operate on the network layer.",
+	        "A client requests data, and a server responds to that request.",
+	        "Clients and servers are different names for the same thing.",
+	        "A server requests data, and a client responds to that request.",
+	    },
+	    Answer: 1, // client requests, server responds
+	},
+	{
+	    ID:       86,
+	    Question: "When a new PC is being built, which component has the most influence when selecting the case and power supply?",
+	    Options: []string{
+	        "hard disk type",
+	        "motherboard",
+	        "RAM module",
+	        "sound card",
+	        "video card",
+	    },
+	    Answer: 1, // motherboard
+	},
+	{
+	    ID:       87,
+	    Question: "When you have a web server, what service is used to enable HTTP requests to be processed?",
+	    Options: []string{
+	        "An HTTP server",
+	        "The web server",
+	        "HTTP status codes",
+	        "A database server",
+	    },
+	    Answer: 0, // HTTP server
+	},
+	{
+	    ID:       88,
+	    Question: "Where is buffered memory commonly used?",
+	    Options: []string{
+	        "servers",
+	        "gaming computers",
+	        "gaming laptops",
+	        "business PCs",
+	        "tablets",
+	    },
+	    Answer: 0, // servers
+	},
+	{
+	    ID:       89,
+	    Question: "Which action can reduce the risk of ESD damage when computer equipment is being worked on?",
+	    Options: []string{
+	        "Working on a grounded antistatic mat",
+	        "moving cordless phones away from the work area",
+	        "keeping the computer plugged into a surge protector",
+	        "lowering the humidity level in the work area",
+	    },
+	    Answer: 0, // grounded antistatic mat
+	},
+	{
+	    ID:       90,
+	    Question: "Which adapter would a technician install in a desktop computer to enable a video signal to be recorded from a video recorder to the computer hard drive?",
+	    Options: []string{
+	        "video capture card",
+	        "video adapter",
+	        "TV tuner card",
+	        "network interface card",
+	    },
+	    Answer: 0, // video capture card
+	},
+	{
+	    ID:       91,
+	    Question: "Which characteristic describes a DIP?",
+	    Options: []string{
+	        "an individual memory chip that has dual rows of pins used to attach it to the motherboard",
+	        "chips that require constant power to function and are often used for cache memory",
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "chips whose contents can be “flashed” for deletion and are often used to store BIOS",
+	    },
+	    Answer: 0, // dual in-line package
+	},
+	{
+	    ID:       92,
+	    Question: "Which characteristic describes DDR3 SDRAM?",
+	    Options: []string{
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "an individual memory chip that has dual rows of pins used to attach it to the motherboard",
+	        "a small circuit board that holds several memory chips and has a 30- or 72-pin configuration",
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	    },
+	    Answer: 0, // DDR3 characteristics
+	},
+	{
+	    ID:       93,
+	    Question: "Which characteristic describes ECC memory?",
+	    Options: []string{
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	        "chips that can detect multiple bit errors and correct single bit errors in memory",
+	        "an individual memory chip that has dual rows of pins used to attach it to the motherboard",
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	    },
+	    Answer: 1, // ECC functionality
+	},
+	{
+	    ID:       94,
+	    Question: "Which characteristic describes EPROM?",
+	    Options: []string{
+	        "SRAM that is internal and integrated into the CPU",
+	        "a smaller, more condensed memory module that provides random access data storage, ideal for use in laptops, printers, and other devices where conserving space is desirable",
+	        "a chip that is nonvolatile and can be erased by exposing it to strong ultraviolet light",
+	        "a small circuit board that holds several memory chips and has a 30- or 72-pin configuration",
+	    },
+	    Answer: 2, // UV-erasable ROM
+	},
+	{
+	    ID:       95,
+	    Question: "Which characteristic describes EPROM?",
+	    Options: []string{
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	        "chips that require constant power to function and are often used for cache memory",
+	        "a chip that is nonvolatile and can be erased by exposing it to strong ultraviolet light",
+	    },
+	    Answer: 3, // UV-erasable ROM
+	},
+	{
+	    ID:       96,
+	    Question: "Which characteristic describes GDDR SDRAM?",
+	    Options: []string{
+	        "chips that require constant power to function and are often used for cache memory",
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "chips whose contents can be “flashed” for deletion and are often used to store BIOS",
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	    },
+	    Answer: 3, // graphics DDR
+	},
+	{
+	    ID:       97,
+	    Question: "Which characteristic describes PROM?",
+	    Options: []string{
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	        "chips that require constant power to function and are often used for cache memory",
+	        "chips that are manufactured blank and then can be programmed once by a PROM programmer",
+	    },
+	    Answer: 3, // programmable once
+	},
+	{
+	    ID:       98,
+	    Question: "Which characteristic describes ROM?",
+	    Options: []string{
+	        "chips that run at clock speeds of 800 MHz and have a connector with 240 pins",
+	        "chips specifically designed for video graphics that are used in conjunction with a dedicated GPU",
+	        "chips that require constant power to function and are often used for cache memory",
+	        "a chip that cannot be erased or rewritten and is now obsolete",
+	    },
+	    Answer: 3, // traditional ROM
+	},
+	{
+	    ID:       99,
+	    Question: "Which condition refers to a reduced voltage level of AC power that lasts for an extended period of time?",
+	    Options: []string{
+	        "spike",
+	        "sag",
+	        "surge",
+	        "brownout",
+	    },
+	    Answer: 3, // brownout
+	},
+	{
+	    ID:       100,
+	    Question: "Which device provides wireless connectivity to users as its primary function?",
+	    Options: []string{
+	        "router",
+	        "modem",
+	        "access point",
+	        "switch",
+	    },
+	    Answer: 2, // access point
+	},
+	{
+	    ID:       101,
+	    Question: "Which filtering method uses the physical address to specify exactly which device is allowed or blocked from sending data on a network?",
+	    Options: []string{
+	        "port triggering",
+	        "MAC address filtering",
+	        "port forwarding",
+	        "whitelisting",
+	    },
+	    Answer: 1, // MAC filtering
+	},
+	{
+	    ID:       102,
+	    Question: "Which IEEE standard operates at wireless frequencies in both the 5 GHz and 2.4 GHz ranges?",
+	    Options: []string{
+	        "802.11a",
+	        "802.11n",
+	        "802.11b",
+	        "802.11g",
+	    },
+	    Answer: 1, // 802.11n
+	},
+	{
+	    ID:       103,
+	    Question: "Which is measured in GHz?",
+	    Options: []string{
+	        "Processor",
+	        "Hard Disk",
+	        "RAM",
+	        "Power Supply",
+	    },
+	    Answer: 0, // Processor
+	},
+	{
+	    ID:       104,
+	    Question: "Which is not the best example of a peripheral?",
+	    Options: []string{
+	        "Printer",
+	        "Speakers",
+	        "Hard Disk",
+	        "Keyboard",
+	    },
+	    Answer: 2, // Hard Disk
+	},
+	{
+	    ID:       105,
+	    Question: "Which is the main circuit board of the computer?",
+	    Options: []string{
+	        "Motherboard",
+	        "RAM",
+	        "ROM",
+	        "CPU",
+	    },
+	    Answer: 0, // Motherboard
+	},
+	{
+	    ID:       106,
+	    Question: "Which is true about power supply?",
+	    Options: []string{
+	        "A single PSU can supply 5 computer units",
+	        "It converts the main alternating current into low-voltage direct current.",
+	        "It has its own processor",
+	        "PSU's are all true rated",
+	    },
+	    Answer: 1, // AC to DC conversion
+	},
+	{
+	    ID:       107,
+	    Question: "Which motherboard form factor has the smallest footprint for use in thin client devices?",
+	    Options: []string{
+	        "ATX",
+	        "Mini-ATX",
+	        "ITX",
+	        "Micro-ATX",
+	    },
+	    Answer: 1, // Mini-ATX (per given key)
+	},
+	{
+	    ID:       108,
+	    Question: "Which network protocol is used to automatically assign an IP address to a computer on a network?",
+	    Options: []string{
+	        "APIPA",
+	        "DHCP",
+	        "ICMP",
+	        "SMTP",
+	        "FTP",
+	    },
+	    Answer: 1, // DHCP
+	},
+	{
+	    ID:       109,
+	    Question: "Which network server is malfunctioning if a user can ping the IP address of a web server but cannot ping the web server host name?",
+	    Options: []string{
+	        "the DHCP server",
+	        "the HTTP server",
+	        "the DNS server",
+	        "the FTP server",
+	    },
+	    Answer: 2, // DNS server
+	},
+	{
+	    ID:       110,
+	    Question: "Which of the following is an example of a network layer (layer 3) protocol?",
+	    Options: []string{
+	        "Ethernet",
+	        "TCP",
+	        "UDP",
+	        "IP",
+	    },
+	    Answer: 3, // IP
+	},
+	{
+	    ID:       111,
+	    Question: "Which one of the below is classed as volatile storage?",
+	    Options: []string{
+	        "RAM",
+	        "SSD",
+	        "HDD",
+	        "Memory Stick",
+	    },
+	    Answer: 0, // RAM
+	},
+	{
+	    ID:       112,
+	    Question: "Which one of these devices is optical?",
+	    Options: []string{
+	        "CD",
+	        "SSD",
+	        "USB flash drive",
+	        "Magnetic stripe",
+	    },
+	    Answer: 0, // CD
+	},
+	{
+	    ID:       113,
+	    Question: "Which pairs of wires change termination order between the 568A and 568B standards?",
+	    Options: []string{
+	        "blue and brown",
+	        "green and orange",
+	        "green and brown",
+	        "brown and orange",
+	    },
+	    Answer: 1, // green and orange
+	},
+	{
+	    ID:       114,
+	    Question: "Which PC component communicates with the CPU through the Southbridge chipset?",
+	    Options: []string{
+	        "BIOS",
+	        "hard drive",
+	        "RAM",
+	        "video card",
+	    },
+	    Answer: 1, // hard drive
+	},
+	{
+	    ID:       115,
+	    Question: "Which PC motherboard bus is used to connect the CPU to RAM and other motherboard components?",
+	    Options: []string{
+	        "PCI",
+	        "SATA",
+	        "front-side",
+	        "PCIe",
+	    },
+	    Answer: 2, // front-side bus
+	},
+	{
+	    ID:       116,
+	    Question: "Which port allows for the transmission of high definition video using the DisplayPort protocol?",
+	    Options: []string{
+	        "DVI",
+	        "VGA",
+	        "RCA",
+	        "Thunderbolt",
+	    },
+	    Answer: 3, // Thunderbolt
+	},
+	{
+	    ID:       117,
+	    Question: "Which smart home wireless technology has an open standard that allows up to 232 devices to be connected?",
+	    Options: []string{
+	        "Z-Wave",
+	        "Zigbee",
+	        "802.11n",
+	        "802.11ac",
+	    },
+	    Answer: 0, // Z-Wave
+	},
+	{
+	    ID:       118,
+	    Question: "Which statement describes a characteristic of SRAM in a PC?",
+	    Options: []string{
+	        "It has the highest power consumption.",
+	        "It is used for cache memory.",
+	        "It has a connector with 240 pins.",
+	        "It is used as main RAM in a PC.",
+	    },
+	    Answer: 1, // cache memory
+	},
+	{
+	    ID:       119,
+	    Question: "Which statement describes Augmented Reality (AR) technology?",
+	    Options: []string{
+	        "It superimposes images and audio over the real world in real time.",
+	        "The headset closes off any ambient light to users.",
+	        "It always requires a headset.",
+	        "It does not provide users with immediate access to information about their real surroundings.",
+	    },
+	    Answer: 0, // AR definition
+	},
+	{
+	    ID:       120,
+	    Question: "Which statement describes the purpose of an I/O connector plate?",
+	    Options: []string{
+	        "It makes the I/O ports of the motherboard available for connection in a variety of computer cases.",
+	        "It provides multiple connections for SATA hard drives to connect to the motherboard.",
+	        "It plugs into the motherboard and expands the number of available slots for adapter cards.",
+	        "It connects the PCIe adapter slots used for video directly to the CPU for faster processing.",
+	    },
+	    Answer: 0, // I/O shield purpose
+	},
+	{
+	    ID:       121,
+	    Question: "Which tool can protect computer components from the effects of ESD?",
+	    Options: []string{
+	        "antistatic wrist strap",
+	        "surge suppressor",
+	        "UPS",
+	        "SPS",
+	    },
+	    Answer: 0, // antistatic wrist strap
+	},
+	{
+	    ID:       122,
+	    Question: "Which tool can protect computer components from the effects of ESD?",
+	    Options: []string{
+	        "antistatic wrist strap",
+	        "surge suppressor",
+	        "SPS",
+	        "UPS",
+	    },
+	    Answer: 0, // antistatic wrist strap
+	},
+	{
+	    ID:       123,
+	    Question: "Which type of device would be used on a laptop to verify the identity of a user?",
+	    Options: []string{
+	        "a MIDI device",
+	        "a biometric identification device",
+	        "a digitizer",
+	        "a touch screen",
+	    },
+	    Answer: 1, // biometric device
+	},
+	{
+	    ID:       124,
+	    Question: "Which type of drive is typically installed in a 5.25 inch (13.34 cm) bay?",
+	    Options: []string{
+	        "hard drive",
+	        "SSD",
+	        "optical drive",
+	        "flash drive",
+	    },
+	    Answer: 2, // optical drive
+	},
+	{
+	    ID:       125,
+	    Question: "Which type of interface was originally developed for high-definition televisions and is also popular to use with computers to connect audio and video devices?",
+	    Options: []string{
+	        "FireWire",
+	        "USB",
+	        "HDMI",
+	        "VGA",
+	    },
+	    Answer: 2, // HDMI
+	},
+	{
+	    ID:       126,
+	    Question: "Which type of interface was originally developed for high-definition televisions and is also popular to use with computers to connect audio and video devices?",
+	    Options: []string{
+	        "HDMI",
+	        "FireWire",
+	        "DVI",
+	        "VGA",
+	        "USB",
+	    },
+	    Answer: 0, // HDMI
+	},
+	{
+	    ID:       127,
+	    Question: "Which type of motherboard expansion slot has four types ranging from x1 to x16 with each type having a different length of expansion slot?",
+	    Options: []string{
+	        "AGP",
+	        "PCI",
+	        "SATA",
+	        "PCIe",
+	    },
+	    Answer: 3, // PCIe
+	},
+	{
+	    ID:       128,
+	    Question: "Which type of motherboard expansion slot sends data one bit at a time over a serial bus?",
+	    Options: []string{
+	        "PCIe",
+	        "PCI",
+	        "RAM",
+	        "PATA",
+	    },
+	    Answer: 0, // PCIe
+	},
+	{
+	    ID:       129,
+	    Question: "Why is it important to ground both computers and network devices?",
+	    Options: []string{
+	        "to facilitate the flow of current from the power supply to the computer case",
+	        "to provide a path of least resistance for stray current",
+	        "to ensure that both the power supplied and the power used is in sync with the ground voltage",
+	        "to ensure that the power supply is limited to an output of 110V DC",
+	    },
+	    Answer: 1, // path of least resistance
+	},
+	}
 
 var store = NewTestStore(30 * time.Minute)
 
